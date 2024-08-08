@@ -2,6 +2,7 @@ package ru.fourbarman;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.fourbarman.database.pool.ConnectionPool;
+import ru.fourbarman.database.repository.CompanyRepository;
 
 /**
  * Hello world!
@@ -10,7 +11,9 @@ import ru.fourbarman.database.pool.ConnectionPool;
 public class ApplicationRunner {
     public static void main( String[] args ) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
-        ConnectionPool pool = context.getBean("pool1", ConnectionPool.class);
+        ConnectionPool pool = context.getBean("p1", ConnectionPool.class);
         System.out.println(pool);
+        CompanyRepository companyRepository = context.getBean("companyRepository", CompanyRepository.class);
+        System.out.println(companyRepository);
     }
 }
