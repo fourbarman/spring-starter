@@ -10,10 +10,12 @@ import ru.fourbarman.database.repository.CompanyRepository;
  */
 public class ApplicationRunner {
     public static void main( String[] args ) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
-        ConnectionPool pool = context.getBean("p1", ConnectionPool.class);
-        System.out.println(pool);
-        CompanyRepository companyRepository = context.getBean("companyRepository", CompanyRepository.class);
-        System.out.println(companyRepository);
+        CompanyRepository companyRepository;
+        try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml")) {
+            ConnectionPool pool = context.getBean("p1", ConnectionPool.class);
+            System.out.println(pool);
+            companyRepository = context.getBean("companyRepository", CompanyRepository.class);
+            System.out.println(companyRepository);
+        }
     }
 }
