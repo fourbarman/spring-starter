@@ -12,6 +12,9 @@
 <!--        <property name="location" value="classpath:application.properties"/>-->
 <!--    </bean>-->
 
+    <bean class="ru.fourbarman.bfpp.LogBeanFactoryPostProcessor"/>
+    <bean class="ru.fourbarman.bfpp.VerifyBeanFactoryPostProcessor"/>
+
     <bean id="driver" class="java.lang.String">
         <constructor-arg type="java.lang.String" value="${db.driver}"/>
     </bean>
