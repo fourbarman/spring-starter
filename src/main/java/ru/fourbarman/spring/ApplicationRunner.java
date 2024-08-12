@@ -1,9 +1,9 @@
-package ru.fourbarman;
+package ru.fourbarman.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.fourbarman.config.ApplicationConfiguration;
-import ru.fourbarman.database.pool.ConnectionPool;
-import ru.fourbarman.database.repository.CrudRepository;
+import ru.fourbarman.spring.config.ApplicationConfiguration;
+import ru.fourbarman.spring.database.pool.ConnectionPool;
+import ru.fourbarman.spring.database.repository.CrudRepository;
 
 /**
  * Hello world!

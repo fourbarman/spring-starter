@@ -1,4 +1,4 @@
-package ru.fourbarman.bfpp;
+package ru.fourbarman.spring.bfpp;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;

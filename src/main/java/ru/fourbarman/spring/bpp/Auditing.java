@@ -1,4 +1,4 @@
-package ru.fourbarman.bpp;
+package ru.fourbarman.spring.bpp;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

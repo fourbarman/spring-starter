@@ -1,10 +1,10 @@
-package ru.fourbarman.service;
+package ru.fourbarman.spring.service;
 
 import org.springframework.stereotype.Service;
-import ru.fourbarman.database.entity.Company;
-import ru.fourbarman.database.repository.CompanyRepository;
-import ru.fourbarman.database.repository.CrudRepository;
-import ru.fourbarman.database.repository.UserRepository;
+import ru.fourbarman.spring.database.entity.Company;
+import ru.fourbarman.spring.database.repository.CompanyRepository;
+import ru.fourbarman.spring.database.repository.CrudRepository;
+import ru.fourbarman.spring.database.repository.UserRepository;
 
 @Service
 public class UserService {

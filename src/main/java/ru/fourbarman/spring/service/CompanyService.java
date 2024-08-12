@@ -1,4 +1,4 @@
-package ru.fourbarman.service;
+package ru.fourbarman.spring.service;
 
 import org.springframework.stereotype.Service;
 
