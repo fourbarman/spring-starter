@@ -11,6 +11,8 @@
     <context:property-placeholder location="classpath:application.properties"/>
 
     <bean class="ru.fourbarman.bpp.InjectBeanPostProcessor"/>
+    <bean class="ru.fourbarman.bpp.TransactionBeanPostProcessor"/>
+    <bean class="ru.fourbarman.bpp.AuditingBeanPostProcessor"/>
 <!--    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">-->
 <!--        <property name="location" value="classpath:application.properties"/>-->
 <!--    </bean>-->
