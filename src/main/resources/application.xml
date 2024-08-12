@@ -19,7 +19,7 @@
         
     
 
-    <context:property-placeholder location="classpath:application.properties"/>
+<!--    <context:property-placeholder location="classpath:application.properties"/>-->
 
     <!--Здесь установить проперти поможет только java config, поэтому пока закомментировали-->
     <!--    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">-->

@@ -183,3 +183,9 @@ Metadata (Bean Definitions) могут создаваться тремя спо�
  - набор предоставляет Java EE
  - **JSR-250** - Java annotations
  - **JSR-300** - Dependency injection annotations
+# Java based configuration
+ - представление BeanDefinitions в java коде, без xml.
+ - **ConfigurationClassPostProcessor** (BFPP!) обрабатывает аннотацию **@Configuration**:
+   - все классы, из которых будут созданы BeanDefinitions должны быть помечены @Configuration, потому что они обрабатываются в первую очередь.
+ - **@PropertySource** - для указания пути сканирования пропертей. Замена \<context:property-placeholder/>
+ - **@ComponentScan** - для обработки аннотаций, компонентов. Замена xml \<context:component-scan/>
