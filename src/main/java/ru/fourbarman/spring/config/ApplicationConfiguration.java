@@ -33,4 +33,14 @@ public class ApplicationConfiguration {
     public UserRepository userRepository2(ConnectionPool pool2) {
         return new UserRepository(pool2);
     }
+
+    @Bean
+    public ConnectionPool pool3() {
+        return new ConnectionPool("test-username", 25);
+    }
+
+    @Bean
+    public UserRepository userRepository3() {
+        return new UserRepository(pool3());
+    }
 }
