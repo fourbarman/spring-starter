@@ -177,3 +177,9 @@ Metadata (Bean Definitions) могут создаваться тремя спо�
     - ConfigurationClassBeanDefinitionReader
       1. @Configuration
       2. @Bean
+### JSR-250, JSR-330
+ - **Java Specification Requests**
+ - набор интерфейсов и аннотаций, которые необходимо реализовывать, чтобы соблюдать спецификации
+ - набор предоставляет Java EE
+ - **JSR-250** - Java annotations
+ - **JSR-300** - Dependency injection annotations
