@@ -1,8 +1,12 @@
 package ru.fourbarman.spring.config;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.*;
 import org.springframework.stereotype.Component;
+import ru.fourbarman.spring.database.pool.ConnectionPool;
 import ru.fourbarman.spring.database.repository.CrudRepository;
+import ru.fourbarman.spring.database.repository.UserRepository;
 import ru.fourbarman.web.config.WebConfiguration;
 
 //@ImportResource("classpath:application.xml")
@@ -19,4 +23,14 @@ import ru.fourbarman.web.config.WebConfiguration;
         })
 public class ApplicationConfiguration {
 
+    @Bean
+    @Scope(BeanDefinition.SCOPE_SINGLETON)
+    public ConnectionPool pool2(@Value("${db.username}") String username) {
+        return new ConnectionPool(username, 20);
+    }
+
+    @Bean
+    public UserRepository userRepository2(ConnectionPool pool2) {
+        return new UserRepository(pool2);
+    }
 }
