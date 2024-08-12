@@ -11,7 +11,12 @@ import ru.fourbarman.spring.database.repository.CrudRepository;
  */
 public class ApplicationRunner {
     public static void main( String[] args ) {
-        try (var context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class)) {
+        try (var context = new AnnotationConfigApplicationContext()) {
+
+            context.register(ApplicationConfiguration.class);
+            context.getEnvironment().setActiveProfiles("web", "prod");
+            context.refresh();
+
             ConnectionPool pool = context.getBean("pool1", ConnectionPool.class);
             System.out.println(pool);
             var companyRepository = context.getBean("companyRepository", CrudRepository.class);
