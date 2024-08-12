@@ -141,3 +141,19 @@ Metadata (Bean Definitions) могут создаваться тремя спо�
  - этот фильтр - аннотация **@Component** (а так же **@Repository, @Service**) - разделение логическое. Некоторые аннотации Spring так же являются компонентами (например @RestController)
  - уже включает в себя все бины, которые несет в себе **\<context:annotation-config/>**
  - для создания объектов, нужен конструктор и автоскан возьмет тот, который помечен *@Autowired*. Если же в классе только один конструктор, то он и будет вызван - Autowired можно не ставить.
+#### Component scans
+1. **XML \<context: component-scan/>** - ComponentScanBeanDefinitionParser
+2. **Annotation @ComponentScan** - ComponentScanAnnotationParser
+### Bean Definition Reader
+1. **XML based**
+   - Интерфейс BeanDefinitionReader:
+     1. XmlBeanDefinitionReader - парсит xml, находит элементы \<bean/> и на их основании создает BeanDefinition.
+     2. GroovyBeanDefinitionReader - для Groovy.
+     3. PropertiesBeanDefinitionReader *(deprecated)* - читает property и из них создает BeanDefinition.
+2. **Annotation based**
+    - ClassPathBeanDefinitionScanner
+    - AnnotatedBeanDefinitionReader - для того, чтобы вручную зарегистрировать бины (имеет много методов register)
+3. **Java based**
+    - ConfigurationClassBeanDefinitionReader
+      1. @Configuration
+      2. @Bean
