@@ -12,7 +12,7 @@ import ru.fourbarman.database.repository.CrudRepository;
 public class ApplicationRunner {
     public static void main( String[] args ) {
         try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml")) {
-            ConnectionPool pool = context.getBean("p1", ConnectionPool.class);
+            ConnectionPool pool = context.getBean("pool1", ConnectionPool.class);
             System.out.println(pool);
             var companyRepository = context.getBean("companyRepository", CrudRepository.class);
             System.out.println(companyRepository.findById(1));
